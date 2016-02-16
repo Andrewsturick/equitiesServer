@@ -31,7 +31,7 @@ function runAPICycle(){
           minute++
         }
       })
-    },6000)
+    },60000)
   }
 }
 
