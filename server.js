@@ -24,7 +24,6 @@ function runAPICycle(){
   var minute = 0
   runCycle()
   function runCycle(){
-    console.log('hello!');
     setTimeout(function(){
       request(`http://localhost:${PORT}/marketWatch/`,function(error, response, body){
         if(minute< 420){

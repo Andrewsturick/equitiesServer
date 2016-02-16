@@ -22,6 +22,7 @@ module.exports = {
   },
 
   addMinuteSnapshot: function(){
+    var now = Date.now()
     marketArray.marketArray.map(function(stock){
       var lastQuoteRef = marketRef.child(stock.Symbol).child('currentEquityInfo')
       lastQuoteRef.once('value', function(data){
@@ -29,7 +30,7 @@ module.exports = {
         CONST.propertiesToRemove.map(function(prop){
           delete obj[prop]
         })
-        marketRef.child(stock.Symbol).child('today').child(Date.now()).set(obj)
+        marketRef.child(stock.Symbol).child('today').child(now).set(obj)
       })
     })
   },

@@ -4,7 +4,6 @@ var router = express.Router();
 var tracker = require('../portfolio/tracker1.js')
 
 router.get('/', function(req, res){
-  // tracker.trackPortfolio()
   tracker.trackMarketStockInfo()
   res.send("done")
 })
