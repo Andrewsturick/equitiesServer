@@ -52,13 +52,13 @@ function updateEveryMinute(){
 
 
 
-var runCycle = new cronJob('00 02 22 * * 1-5', function(){
+var runCycle = new cronJob('00 04 22 * * 1-5', function(){
   runAPICycle()
 });
 runCycle.start();
 
 
-var runMinuteRecordCycle = new cronJob('00 02 22 * * 1-5', function(){
+var runMinuteRecordCycle = new cronJob('00 04 22 * * 1-5', function(){
   request(`http://localhost:${PORT}/minuteSnap/clear`,function(error, response, body){
       updateEveryMinute()
     })
