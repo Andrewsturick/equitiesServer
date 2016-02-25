@@ -6,6 +6,7 @@ var tracker = require('../portfolio/tracker1.js')
 
 router.get('/record', function(req, res){
   tracker.addMinuteSnapshot()
+  tracker.pushMinute
   res.send("done")
 })
 router.get('/clear', function(req, res){

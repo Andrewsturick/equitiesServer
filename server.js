@@ -8,7 +8,7 @@ var upload = require('./portfolio/portfolioUpload')
 var CONST = require('./portfolio/constants')
 var app = express();
 var cronJob = require('cron').CronJob;
-var PORT = process.env.PORT || 3003;
+var PORT = process.env.PORT || 3002;
 
 
 app.use(morgan('dev'));
@@ -42,7 +42,7 @@ function updateEveryMinute(){
   function updateInOneMinute(){
     setTimeout(function(){
       request(`http://localhost:${PORT}/minuteSnap/record`,function(error, response, body){
-        if(minuteRecorder < 3){
+        if(minuteRecorder < 420){
           updateInOneMinute()
           minuteRecorder++
          }
@@ -53,15 +53,13 @@ function updateEveryMinute(){
 
 
 
-var runCycle = new cronJob('00 16 22 * * 1-5', function(){
-  console.log('hello');
+var runCycle = new cronJob('00 52 11 * * 1-5', function(){
   runAPICycle()
 });
 runCycle.start();
 
 
-var runMinuteRecordCycle = new cronJob('00 16 22 * * 1-5', function(){
-  console.log('hello');
+var runMinuteRecordCycle = new cronJob('00 52 11 * * 1-5', function(){
   request(`http://localhost:${PORT}/minuteSnap/clear`,function(error, response, body){
       updateEveryMinute()
     })

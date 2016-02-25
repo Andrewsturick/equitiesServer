@@ -24,6 +24,19 @@ module.exports = {
     "ExDividendDate",
     "OneyrTargetPrice",
     "PriceEPSEstimateCurrentYear",
-    "PriceEPSEstimateNextYear"
+    "PriceEPSEstimateNextYear",
+    "Change_PercentChange",
+    "DaysRange",
+    "EBITDA",
+    "FiftydayMovingAverage",
+    "LastTradeDate",
+    "LastTradeWithTime",
+    "PEGRatio",
+    "PercebtChangeFromYearHigh",
+    "PercentChangeFromFiftydayMovingAverage",
+    "PercentChangeFromTwoHundreddaydayMovingAverage",
+    "PercentChangeFromYearLow",
+    "PriceBook",
+    "TwoHundreddayMovingAverage"
   ]
 }

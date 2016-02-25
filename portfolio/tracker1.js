@@ -39,7 +39,4 @@ module.exports = {
       marketRef.child(stock.Symbol).child('today').remove()
     })
   }
-
-
-
 }
