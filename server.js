@@ -36,7 +36,6 @@ function runAPICycle(){
 }
 
 function updateEveryMinute(){
-  console.log('boob');
   var minuteRecorder = 0;
   updateInOneMinute()
   function updateInOneMinute(){
@@ -53,13 +52,13 @@ function updateEveryMinute(){
 
 
 
-var runCycle = new cronJob('00 52 11 * * 1-5', function(){
+var runCycle = new cronJob('00 29 06 * * 1-5', function(){
   runAPICycle()
 });
 runCycle.start();
 
 
-var runMinuteRecordCycle = new cronJob('00 52 11 * * 1-5', function(){
+var runMinuteRecordCycle = new cronJob('00 29 6 * * 1-5', function(){
   request(`http://localhost:${PORT}/minuteSnap/clear`,function(error, response, body){
       updateEveryMinute()
     })
